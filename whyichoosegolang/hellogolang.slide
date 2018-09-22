@@ -1,0 +1,156 @@
+Hello Golang
+Why this is my favorite language
+15:00 27 Aug 2018
+
+Iurii Bliuchak
+Mall Group
+iurii.bliuchak@mall.cz
+
+* The Go programming language
+
+- Designed to build high speed concurrenct applications
+- Compiled, statically type-checked, dynamically type-safe
+- Garbage-collected
+- Simple syntax based on C (enchansed with syntax sugar)
+- Low entry level
+- Build in tools (gofmt, go test, ...)
+- Android support (experimental)
+
+* Robust std library
+
+- Many high quality code
+- the idiomatic code concept
+
+Containes:
+
+- net/http - provides HTTP client and server implementations
+- os - provides a platform-independent interface to operating system functionality
+- database/sql - provides a generic interface around SQL (or SQL-like) databases
+- ... and many others
+
+* Hello world
+
+.play data/hello.go
+
+  // run application
+  go run main.go
+
+  // build binary
+  go build main.go
+
+  // run binary
+  ./main
+
+* Write once run everywhere
+
+Now you don't need Windows to build application for Windows
+
+  // Building for Windows 32-bit
+  $ env GOOS=windows GOARCH=386 go build -o simple_32bit.exe simple.go
+  
+  // Building for Windows 64-bit
+  $ env GOOS=windows GOARCH=amd64 go build -o simple_64bit.exe simple.go
+  
+  // Building for Linux 32-bit
+  $ env GOOS=linux GOARCH=386 go build -o simple_32bit simple.go
+  
+  // Building for Linux 64-bit
+  $ env GOOS=linux GOARCH=amd64 go build -o simple_64bit simple.go
+
+* Basic types
+
+* Strings
+
+.play data/strings/main.go
+
+* Numbers
+
+.play data/numbers/main.go
+
+* Arrays & Slices
+
+- Arrays have a fixed size
+- Slices have a dynamic size
+
+.play data/arrays/main.go
+
+* Pointers
+
+Pointers point to a memory location of a variable. Go is fully garbage-collected.
+
+.play data/pointer/main.go
+
+* Type conversions
+
+.play data/conversions/main.go
+
+* Flow control
+
+.play data/flow/main.go
+
+* Functions
+
+.play data/functions/main.go
+
+* Packages
+
+- Every Go program is made up of packages
+- Programs start running in package main
+- This program is using the packages with import paths "fmt" and "math/rand"
+
+.play data/package/main.go
+
+* Goroutines & Channels
+
+A goroutine is a lightweight thread of execution.
+Channels are the pipes that connect concurrent goroutines.
+
+.play data/goroutines/main.go
+
+* Defer
+
+Defers running a function until the surrounding function returns. The arguments are evaluated immediately, but the function call is not ran until later.
+
+Lambdas are better suited for defer blocks.
+
+.play data/error_control/main.go
+
+* Structures
+
+Go’s structs are typed collections of fields. They’re useful for grouping data together to form records.
+
+.play data/structures/main.go
+
+* Methods
+
+Go does not have classes. However, you can define methods on types.
+
+The receiver (method) appears in its own argument list between the func keyword and the method name.
+
+.play data/methods/main.go
+
+* Testing
+
+- table drive tests
+https://github.com/golang/go/wiki/TableDrivenTests
+
+- go test -race
+https://blog.golang.org/race-detector
+
+- go test -coverprofile=c.out && go tool cover -html=c.out
+https://blog.golang.org/cover
+
+- benchmarks
+https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go
+
+* Debugging
+
+- pprof
+https://flaviocopes.com/golang-profiling/
+
+- trace
+https://making.pusher.com/go-tool-trace/
+
+
+* Questions
+
